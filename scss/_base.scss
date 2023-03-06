@@ -1,0 +1,41 @@
+html,
+body {
+	scroll-behavior: smooth;
+	min-height: 100%; // чтобы body занимал всю высоту, а не только по высоте контента (на всякий случай)
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 150%; // or 27px 
+	color: #a6a6a6;
+	background: #23252D;
+
+}
+
+.no-scroll {
+	overflow: hidden;
+}
+
+.wrapper {
+	min-height: 100%; // Чтобы wrapper растягивался на весь body
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.container {
+	max-width: 980px + 30px;
+	margin: 0 auto;
+	padding: 0px 15px; // отступы безопасности
+}
+
+.container--wide {
+	max-width: 1160px + 30px;
+}
+
+.main {
+	flex: 1 1 auto;
+}

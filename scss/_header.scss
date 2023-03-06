@@ -1,0 +1,64 @@
+.header {
+	padding: 20px 0px;
+	background: transparent;
+
+	&__body {
+		display: flex;
+		align-items: center;
+	}
+
+	&__logo {
+		margin-right: 15px;
+		transition: all 0.3s;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+
+	&__menu {
+		margin-left: auto;
+	}
+
+	&__btn {
+		padding: 8px 28px;
+		background: #faa525;
+		border-radius: 25px;
+		font-weight: 600;
+		line-height: 150%;
+		text-transform: uppercase;
+		color: #17171e;
+		border: 2px solid transparent;
+		transition: all 0.3s;
+
+		&:hover {
+			background: transparent;
+			border-color: #FAA525;
+			color: #FAA525;
+		}
+	}
+}
+
+.menu {
+	&__list {
+		display: flex;
+		align-items: center;
+		margin-right: 84px;
+	}
+
+	&__item {
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+	}
+
+	&__link {
+		line-height: 150%;
+		color: #fff;
+		transition: all 0.3s;
+
+		&:hover {
+			color: #FAA525;
+		}
+	}
+}
