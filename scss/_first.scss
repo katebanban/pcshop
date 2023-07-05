@@ -1,0 +1,271 @@
+.first {
+	position: relative;
+	padding-top: 117px;
+
+	@media (max-width: 480px) {
+		padding-top: 100px;
+	}
+
+	&__bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		z-index: -1;
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__body {
+	}
+
+	&__slider {
+		padding-left: 70px;
+		min-height: 601px;
+
+		@media (max-width: 1024px) {
+			min-height: 355px;
+			padding-left: unset;
+			padding-right: 70px;
+		}
+
+		@media (max-width: 768px) {
+			padding-right: 50px;
+			min-height: 575px;
+		}
+
+		@media (max-width: 480px) {
+			min-height: 589px;
+		}
+
+		.arrow {
+			transition: all 0.3s;
+			cursor: pointer;
+			width: 38px;
+			height: 63px;
+			position: absolute;
+			left: 0;
+
+			&.slick-disabled {
+				opacity: 0.5; // чтобы на первом и последнем слайде верхняя или нижняя стрелка соответственно становилась полупрозрачной
+			}
+
+			@media (max-width: 1024px) {
+				left: unset;
+				right: 0;
+			}
+		}
+
+		.prev-arrow {
+			top: 52px;
+
+			@media (max-width: 1024px) {
+				top: 0;
+			}
+
+			@media (max-width: 768px) {
+				top: 110px;
+			}
+		}
+
+		.next-arrow {
+			bottom: 138px; // на глаз
+
+			@media (max-width: 1024px) {
+				bottom: 0;
+			}
+
+			@media (max-width: 768px) {
+				bottom: 110px;
+			}
+
+			@media (max-width: 480px) {
+				bottom: 125px;
+			}
+		}
+
+		.slick-dots {
+			position: absolute;
+			top: 145px;
+			left: 6px;
+			margin: 0; // (обнуление)
+			padding: 0; // (обнуление)
+			list-style-type: none; // (обнуление) убираем точки перед эл-ми списка
+			line-height: 0; // (обнуление) убираем лишние отступы, чтобы кружки приклеились друг к другу
+
+			@media (max-width: 1024px) {
+				top: 86px; // на глаз
+				left: unset;
+				right: 6px;
+			}
+
+			@media (max-width: 768px) {
+				top: 195px; // на глаз
+			}
+
+			li {
+				// когда кружок (и кружочек) нажат
+				&.slick-active {
+					button {
+						border-color: #faa525;
+
+						&::after {
+							background: #faa525;
+						}
+					}
+				}
+
+				&:not(:last-child) {
+					margin-bottom: 25px; // расстояние между кружками
+
+					@media (max-width: 1024px) {
+						margin-bottom: 15px;
+					}
+				}
+			}
+
+			// большой кружок
+			button {
+				border: 3px solid rgba(250, 165, 37, 0.5);
+				border-radius: 50%;
+				background: transparent;
+				width: 25px;
+				height: 25px;
+				font-size: 0; // убрать текст внутри кнопок
+				cursor: pointer;
+				transition: all 0.3s;
+
+				// чтобы запозиционировать маленький кружочек внутри большого
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				// маленький кружочек
+				&::after {
+					content: "";
+					width: 9px;
+					height: 9px;
+					background: transparent;
+					border-radius: 50%;
+					flex-shrink: 0; // чтобы кружочек не растягивался в овал
+					transition: all 0.3s;
+				}
+			}
+		}
+	}
+
+	&__slide {
+		display: flex !important; // * !important в данном случае позволяет насильно:) перезаписать значение св-ва display с block на flex
+		justify-content: space-between;
+
+		@media (max-width: 768px) {
+			flex-wrap: wrap-reverse;
+			justify-content: center;
+		}
+	}
+
+	&__content {
+		//padding-top: 107px; // по макету, но смотрится паршиво
+		padding-top: 75px; // на глаз
+		flex: 0 1 466px;
+
+		&:not(:last-child) {
+			margin-right: 15px; // отступ безопасности
+
+			@media (max-width: 768px) {
+				margin-right: unset;
+				margin-top: 20px;
+			}
+		}
+
+		@media (max-width: 1024px) {
+			flex: 0 1 50%;
+			padding-top: unset;
+		}
+
+		@media (max-width: 768px) {
+			text-align: center;
+			flex: 0 1 100%;
+		}
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: 42px;
+		line-height: 150%;
+		text-transform: uppercase;
+		color: #fff;
+
+		&:not(:last-child) {
+			margin-bottom: 25px;
+
+			@media (max-width: 768px) {
+				margin-bottom: 15px;
+			}
+		}
+
+		@media (max-width: 1024px) {
+			font-size: 34px;
+		}
+
+		@media (max-width: 480px) {
+			font-size: 25px;
+		}
+	}
+
+	&__text {
+		line-height: 150%;
+		max-width: 368px;
+
+		&:not(:last-child) {
+			margin-bottom: 45px;
+
+			@media (max-width: 768px) {
+				margin-bottom: 30px;
+			}
+		}
+
+		@media (max-width: 768px) {
+			max-width: 100%;
+		}
+	}
+
+	&__btn {
+		padding: 10px 28px;
+		line-height: 150%;
+		display: inline-block; // чтобы нормально работали отступы для ссылки
+	}
+
+	&__img {
+		flex: 0 0 509px; // задаём жёсткую ширину для картинки
+		height: 601px; // задаём жёсткую высоту для картинки
+
+		@media (max-width: 1024px) {
+			flex: 0 1 50%;
+			height: unset;
+			position: relative;
+
+			img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+			}
+		}
+
+		@media (max-width: 768px) {
+			height: 250px;
+			flex: 0 1 100%;
+		}
+	}
+}

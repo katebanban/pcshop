@@ -1,0 +1,75 @@
+html,
+body {
+	scroll-behavior: smooth;
+	min-height: 100%; // чтобы body занимал всю высоту, а не только по высоте контента (на всякий случай)
+}
+
+body {
+	font-family: "Montserrat", sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 150%;
+	color: #a6a6a6;
+	background: #23252d;
+}
+
+.no-scroll {
+	overflow: hidden;
+}
+
+.wrapper {
+	min-height: 100%; // Чтобы wrapper растягивался на весь body
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	position: relative; // чтобы не появлялся боковой скролл при position:absolute у header
+}
+
+.container {
+	max-width: 980px + 30px;
+	margin: 0 auto;
+	padding: 0px 15px; // отступы безопасности
+}
+
+.container--wide {
+	max-width: 1160px + 30px;
+}
+
+.main {
+	flex: 1 1 auto;
+}
+
+.btn-yellow {
+	padding: 8px 28px;
+	background: #faa525;
+	border-radius: 25px;
+	font-weight: 600;
+	line-height: 150%;
+	text-transform: uppercase;
+	color: #17171e;
+	border: 2px solid transparent;
+	transition: all 0.3s;
+
+	&:hover {
+		background: transparent;
+		border-color: #faa525;
+		color: #faa525;
+	}
+}
+
+.section-title {
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 150%;
+	text-transform: uppercase;
+	color: #fff;
+
+	@media (max-width: 480px) {
+		font-size: 24px;
+	}
+
+	span {
+		color: #faa525;
+	}
+}

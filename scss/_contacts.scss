@@ -1,0 +1,157 @@
+.contacts {
+	position: relative;
+	padding: 120px 0;
+
+	@media (max-width: 768px) {
+		padding: 60px 0;
+	}
+
+	// декоративный элемент над видео (чёрная волна), но под контентом
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: 3;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 354px;
+		background: url("../img/contacts/decor.svg");
+		background-size: cover;
+		background-position: top center;
+		background-repeat: no-repeat;
+	}
+
+	&__video-box {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		// затемнение на видео
+		&::before {
+			content: "";
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.6);
+		}
+	}
+
+	&__video {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__content {
+		position: relative;
+		z-index: 3;
+	}
+
+	&__body {
+		max-width: 50%;
+		margin-left: auto;
+		padding: 80px 30px 76px;
+		//background: rgba(35, 37, 45, 0.8); // на глаз
+		background: rgba(50, 53, 65, 0.8);
+
+		@media (max-width: 1024px) {
+			max-width: 70%;
+		}
+
+		@media (max-width: 768px) {
+			max-width: 100%;
+			padding: 60px 30px 60px;
+		}
+
+		@media (max-width: 480px) {
+			padding: 40px 15px 40px;
+		}
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: 30px;
+
+			@media (max-width: 480px) {
+				margin-bottom: 15px;
+			}
+		}
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+
+		& > * + * {
+			margin-top: 25px;
+
+			@media (max-width: 480px) {
+				margin-top: 15px;
+			}
+		}
+	}
+
+	&__form-name {
+		line-height: 150%;
+		padding: 16px 30px;
+		background: #17171e;
+		border-radius: 25px;
+		color: #fff;
+
+		&:focus {
+			outline: 2px solid #faa525;
+		}
+
+		&::placeholder {
+			color: #a6a6a6;
+		}
+	}
+
+	&__form-email {
+		line-height: 150%;
+		padding: 16px 30px;
+		background: #17171e;
+		border-radius: 25px;
+		color: #fff;
+
+		&:focus {
+			outline: 2px solid #faa525;
+		}
+
+		&::placeholder {
+			color: #a6a6a6;
+		}
+	}
+
+	&__form-message {
+		resize: none; // чтоб нельзя было вручную растягивать поле ввода
+		min-height: 200px;
+		line-height: 150%;
+		padding: 16px 30px;
+		background: #17171e;
+		border-radius: 25px;
+		color: #fff;
+
+		&:focus {
+			outline: 2px solid #faa525;
+		}
+
+		&::placeholder {
+			color: #a6a6a6;
+		}
+	}
+
+	&__form-btn {
+		padding: 10px 28px;
+		align-self: start;
+		line-height: 150%;
+	}
+}
